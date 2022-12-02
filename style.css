@@ -1,0 +1,154 @@
+@font-face {
+    font-family: SFNSDisplay-Thin;
+    src: url(fonts/SFNSDisplay-Thin.otf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100vh;
+    background-color: rgb(248, 250, 251);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    width: 350px;
+    height: 500px;
+    border: 1px solid rgb(235, 236, 238);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+
+    display: flex; /* 자식 요소 : #display, .button_container */
+    flex-direction: column;
+}
+
+/* display 설정 */
+#display {
+    padding: 20px 20px 5px 20px;
+    background-color: rgb(250, 251, 252);
+
+    border: 1px solid rgb(235, 236, 238);
+    border-radius: 20px 20px 0 0;
+
+    height: 35%; /* 부모 요소 : .calculator */
+
+    display: flex; /* 자식 요소 : #logo, #digit */
+    flex-direction: column;
+}
+
+#display #logo {
+    display: flex;
+    align-items: center;
+}
+
+#display #logo img {
+    width: 60px;
+}
+
+#display #digit {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#display #digit span {
+    font-size: 3rem;
+}
+
+/* button_container 설정 */
+.button_container {
+    background-color: rgb(237, 238, 243);
+    border: 1px solid rgb(235, 236, 238);
+    border-radius: 0 0 20px 20px;
+    padding: 20px 5px 10px 5px;
+
+    height: 65%; /* 부모 요소 : .calculator */
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* button_container 안의 모든 div에 너비 25% 설정, 중앙 정렬 */
+.button_container div {
+    width: 25%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 버튼 너비, 높이, 폰트, 색상, 그림자 지정 */
+button {
+    width: 87%;
+    height: 75%;
+    font-size: ;
+    font-family: SFNSDisplay-Thin;
+    color: rgb(88, 93, 103);
+    border: none;
+    border-radius: 13px;
+    background-color: rgb(250, 250, 252);
+    box-shadow: inset 1px 1px 1px #ffffff,
+        inset -1px -1px 1px rgba(111, 126, 145, 0.42);
+    cursor: pointer;
+}
+
+/* operator 버튼 색 지정 */
+button.operator {
+    background-color: rgb(230, 233, 240);
+}
+
+/* 오른쪽 operator 크기 키우기 */
+.bigger {
+    font-size: 1.2rem;
+}
+
+/* number 버튼 폰트 지정 */
+button.number {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 0 버튼 너비 설정 */
+#zero {
+    width: 50%;
+}
+
+#zero button {
+    width: 92.5%;
+}
+
+/* = 버튼 초록색 설정 */
+#equal button {
+    background-color: rgb(27, 202, 73);
+    color: #ffffff;
+}
+
+/* active 효과 */
+button:active {
+    background-color: rgb(222, 226, 236);
+    color: rgb(171, 174, 182);
+    box-shadow: inset 1px 1px 1px rgba(111, 126, 145, 0.42),
+        inset -1px -1px 1px #ffffff;
+}
+
+#equal button:active {
+    background-color: rgb(134, 209, 135);
+    color: rgb(171, 174, 182);
+    box-shadow: inset 1px 1px 1px rgba(111, 126, 145, 0.42),
+        inset -1px -1px 1px #ffffff;
+}
